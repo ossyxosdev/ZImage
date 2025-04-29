@@ -36,11 +36,6 @@ final public class ZImageManager {
     public convenience init() {
         self.init(makeImageDownloader: { ImageDownloaderImpl() },
                   cache: CompositeImageCacheImpl())
-//        print("ImageDownloadServiceImpl INIT")
-     }
-    
-    deinit {
-//        print("ImageDownloadServiceImpl DEINIT")
     }
 }
 
@@ -54,9 +49,7 @@ extension ZImageManager: ZImageManagerProtocol {
     ) async -> (images: [URL: UIImage], failed: [URL: Error]) {
         var results: [URL: UIImage] = [:]
         var failedResults: [URL: Error] = [:]
-
-        //print("Starting download of \(urls.count) images")
-
+        
         await withTaskGroup(of: (URL, Result<UIImage, Error>).self) { group in
             for url in urls {
                 group.addTask {
@@ -66,12 +59,10 @@ extension ZImageManager: ZImageManagerProtocol {
                     
                     let key = url.absoluteString
                     if let cachedImage = await self.cache.get(forKey: key) {
-                        //print("FROM CACHE")
                         return (url, .success(cachedImage))
                     }
                     
                     do {
-                        //print("⬇️ [NETWORK] Starting download: \(url.lastPathComponent)")
                         let downloader = self.makeImageDownloader()
                         let image = try await downloader.downloadImage(from: url) { progress in
                             if let onProgress {
@@ -81,7 +72,6 @@ extension ZImageManager: ZImageManagerProtocol {
                         await self.cache.set(image, forKey: key)
                         return (url, .success(image))
                     } catch {
-                        //print("❌ [FAILED] \(url.lastPathComponent) — \(error.localizedDescription)")
                         return (url, .failure(error))
                     }
                 }
@@ -97,8 +87,6 @@ extension ZImageManager: ZImageManagerProtocol {
             }
         }
         
-//        print("🏁 All downloads finished. \(results.count)/\(urls.count) succeeded")
-//        print("FAILED::", failedResults)
         return (images: results, failed: failedResults)
     }
 }

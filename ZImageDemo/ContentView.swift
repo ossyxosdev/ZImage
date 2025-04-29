@@ -23,13 +23,18 @@ struct ContentView: View {
                 } label: {
                     Text("Grid")
                 }
+                
+                NavigationLink {
+                    ImageListView()
+                } label: {
+                    Text("List")
+                }
             } footer: {
                 Text("Картинки скачиваются асинхронно и сразу кешируются. При повторном скачивании если картинка в кеше - идет доступ с быстрого кеша (Memory Cache), если нет уже с дискового кеша (Disk Cache). При перезапуске приложения доступ уже идет с Disk Cache.\nЧтобы явно очистить Disk Cache нужно переустановить приложение.")
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .padding(.top)
             }
-            
         }
         .navigationTitle("ZImage Demo")
         .navigationBarTitleDisplayMode(.inline)
@@ -91,6 +96,32 @@ struct SingleImageView: View {
             .padding()
             .frame(maxWidth: .infinity)
             .frame(height: 400)
+        }
+    }
+}
+
+// MARK: - ImageListView
+
+struct ImageListView: View {
+//    private let urls = (1...25).compactMap { URL(string: "https://dummyimage.com/600x600/ababab/fff&text=\($0)") }
+    
+    private let urls = (1...10).compactMap { URL(string: "https://picsum.photos/id/\($0)/600/600") }
+
+    var body: some View {
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(urls, id: \.self) { url in
+                    ZImage(url) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: { progress in
+                        ProgressView(value: progress)
+                    }
+                    .frame(width: 200, height: 200)
+                }
+            }
+            .padding()
         }
     }
 }

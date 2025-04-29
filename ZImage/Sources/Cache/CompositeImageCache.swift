@@ -29,13 +29,11 @@ extension CompositeImageCacheImpl: ImageCache {
     
     public func get(forKey key: String) async -> UIImage? {
         if let memoryImage = await memoryCache.get(forKey: key) {
-            print("FROM MEMORY CACHE", key)
             return memoryImage
         }
         
         if let diskImage = await diskCache.get(forKey: key) {
             await memoryCache.set(diskImage, forKey: key)
-            print("FROM DISK CACHE", key)
             return diskImage
         }
         

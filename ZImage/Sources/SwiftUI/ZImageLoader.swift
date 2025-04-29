@@ -26,15 +26,14 @@ public final class ZImageLoader: ObservableObject {
     // MARK: - Dependencies
     
     private let downloadManager: ZImageManagerProtocol
-//    
-//    // MARK: - Inits
-//    
+    
+    // MARK: - Inits
+    
     public init(url: URL,
                 downloadManager: ZImageManagerProtocol) {
         self.url = url
         self.downloadManager = downloadManager
         load()
-//        print("ZIMAGELOADER INIT \(url)")
     }
     
     public convenience init(url: URL) {
@@ -46,7 +45,6 @@ public final class ZImageLoader: ObservableObject {
     
     deinit {
         currentTask?.cancel()
-//        print("ZIMAGELOADER DEINIT \(url)")
     }
 }
 
