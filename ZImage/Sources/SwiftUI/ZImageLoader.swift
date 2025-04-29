@@ -9,6 +9,8 @@ import SwiftUI
 import UIKit
 import Combine
 
+/// An `ObservableObject` that asynchronously loads an image from a given URL using a download manager.
+/// `ZImageLoader` provides `@Published` properties to track the downloaded image, progress, and error state.
 @MainActor
 public final class ZImageLoader: ObservableObject {
     

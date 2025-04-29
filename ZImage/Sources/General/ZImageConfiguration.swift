@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// A global configuration object used to customize behavior of the ZImage framework.
+///
+/// Use `ZImageConfiguration.shared` to access and configure settings such as maximum concurrent downloads.
 public final class ZImageConfiguration {
     
     public static let shared = ZImageConfiguration()
