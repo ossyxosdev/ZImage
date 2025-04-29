@@ -2,7 +2,7 @@
 //  ZImageApp.swift
 //  ZImage
 //
-//  Created by Olzhas Sagdolla on 29.04.2025.
+//  Created by Olzhas S
 //
 
 import SwiftUI
@@ -11,7 +11,9 @@ import SwiftUI
 struct ZImageApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }
