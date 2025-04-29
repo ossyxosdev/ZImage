@@ -13,6 +13,7 @@ A lightweight, multithreaded image downloading framework for Swift and SwiftUI. 
 - ✅ Testable and clean architecture
 
 ## 🧩 Architecture
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/e2a36375-6b95-4fb2-8921-7bf99a0e1c6d" />
 
 
 
