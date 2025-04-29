@@ -30,7 +30,7 @@ struct ContentView: View {
                     Text("List")
                 }
             } footer: {
-                Text("Картинки скачиваются асинхронно и сразу кешируются. При повторном скачивании если картинка в кеше - идет доступ с быстрого кеша (Memory Cache), если нет уже с дискового кеша (Disk Cache). При перезапуске приложения доступ уже идет с Disk Cache.\nЧтобы явно очистить Disk Cache нужно переустановить приложение.")
+                Text("Картинки скачиваются асинхронно и сразу кешируются. При повторном скачивании если картинка в кеше - идет доступ с быстрого кеша (Memory Cache), если нет - то уже с дискового кеша (Disk Cache). При перезапуске приложения доступ уже идет с Disk Cache.\nЧтобы явно очистить Disk Cache нужно переустановить приложение.")
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .padding(.top)
@@ -89,8 +89,8 @@ struct SingleImageView: View {
                 image
                     .resizable()
                     .scaledToFit()
-            } placeholder: { progress in
-                ProgressView(value: progress)
+            } placeholder: { _ in
+                ProgressView()
             }
             .id(currentURL)
             .padding()
