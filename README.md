@@ -1,3 +1,4 @@
+
 # Zimran + Image = ZImage🚀
 
 A lightweight, multithreaded image downloading framework for Swift and SwiftUI. It provides asynchronous image loading, in-memory caching, download progress tracking, and cancellation support — all optimized for use in SwiftUI with a clean, modular architecture.
@@ -34,7 +35,7 @@ ZImage(url) { image in
 }
 ```
 Ability to set placeholder/handling download progress and handle when image loading fails:
-```
+```swift
 ZImage(url) { image in
     image
         .resizable()
@@ -49,7 +50,7 @@ ZImage(url) { image in
 ### ⚙️ Configuration
 As additional feature the framework supports advanced configuration to meet various performance and memory requirements. You can globally adjust settings such as the number of concurrent downloads and image cache limits:
 
-```
+```swift
 func configureZImage() {
     // Set to nil to let the system automatically determine the number of concurrent downloads
     ZImageConfiguration.shared.maxConcurrentDownloads = 1
