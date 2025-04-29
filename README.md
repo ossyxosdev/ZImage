@@ -26,7 +26,7 @@ After a successful download:
 
 - The image is stored in the **memory cache** for fast reuse.
 - Optionally stored in the **disk cache** for persistence across sessions.
-
+---
 
 ## 🛠️ Usage
 
