@@ -15,6 +15,17 @@ A lightweight, multithreaded image downloading framework for Swift and SwiftUI. 
 ## 🧩 Architecture
 <img width="624" alt="image" src="https://github.com/user-attachments/assets/e2a36375-6b95-4fb2-8921-7bf99a0e1c6d" />
 
+The framework handles image downloading through a structured and efficient pipeline, with support for **caching**, **progress tracking**, and **cancellation**.
+Uses a layered caching strategy that combines **in-memory** and optional **disk-based caching** through a composable abstraction:
+
+- When an image is requested, the system first checks the **in-memory cache**.
+- If not found, it checks the **disk cache**.
+- If still not found, it downloads the image from the **network**.
+
+After a successful download:
+
+- The image is stored in the **memory cache** for fast reuse.
+- Optionally stored in the **disk cache** for persistence across sessions.
 
 
 ## 🛠️ Usage
