@@ -47,6 +47,16 @@ ZImage(url) { image in
     // Show view when image loading fails
 }
 ```
+
+Additional:
+The framework’s ```ImageDownloadServiceImpl``` can be used independently of ZImage, making it easy to integrate with your own custom views or logic. This allows you to download and manage images directly, without relying on the built-in ZImage view.
+
+```swift
+.task {
+    _ = await ImageDownloadServiceImpl.shared.downloadImages(from: urls)
+}
+```
+
 ### ⚙️ Configuration
 As additional feature the framework supports advanced configuration to meet various performance and memory requirements. You can globally adjust settings such as the number of concurrent downloads and image cache limits:
 
