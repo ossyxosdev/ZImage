@@ -88,6 +88,10 @@ func configureZImage() {
 ## Requirements
 * iOS 15+
 
+
+## Unit Tests
+Core functionality covered with unit tests using Apple's modern Swift Testing native library.
+
 ## Demo
 Download repository with source code and demo application. All sources are in the corresponding folders. For now, everything is in one project, but it is possible to take it out as a separate library.
 Demo application shows usecases of framework - downloading single/multiple images, caching, UI-features.
