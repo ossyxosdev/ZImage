@@ -59,16 +59,16 @@ ZImage(url) { image in
     // You can add your own Progress view
     // Or just placeholder view (replace "progress" with "_" if no needed)
 } onErrorContent: { error in
-    // Show view when image loading fails
+    // Show your view when image loading fails
 }
 ```
 
 Additional:
-The framework’s ```ImageDownloadServiceImpl``` can be used independently of ZImage, making it easy to integrate with your own custom views or logic. This allows you to download and manage images directly, without relying on the built-in ZImage view.
+The framework’s ```ZImageManager``` can be used independently of ZImage, making it easy to integrate with your own custom views or logic. This allows you to download and manage images directly, without relying on the built-in ZImage view.
 
 ```swift
 .task {
-    _ = await ImageDownloadServiceImpl.shared.downloadImages(from: urls)
+    _ = await ZImageManager.shared.downloadImages(from: urls)
 }
 ```
 
