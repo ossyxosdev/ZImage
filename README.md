@@ -1,5 +1,6 @@
 
 # Zimran + Image = ZImage🚀
+<img width="1685" alt="image" src="https://github.com/user-attachments/assets/6cf01993-6d27-463f-84af-ab100c269a2e" />
 
 A lightweight, multithreaded image downloading framework for Swift and SwiftUI. It provides asynchronous image loading, in-memory caching, download progress tracking, and cancellation support — all optimized for use in SwiftUI with a clean, modular architecture.
 
