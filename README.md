@@ -88,7 +88,13 @@ func configureZImage() {
 ## Demo
 Download repository with source code and demo application. All sources are in the corresponding folders. For now, everything is in one project, but it is possible to take it out as a separate library.
 Demo application shows usecases of framework - downloading single/multiple images, caching, UI-features.
+
+<div align="center">
+
 <img width="413" alt="image" src="https://github.com/user-attachments/assets/31dba98d-d440-41a5-8c75-9ee4739b8d6f" />
 <img width="413" alt="image" src="https://github.com/user-attachments/assets/390053f7-56c3-43d6-bc89-3bd6b86b947d" />
+
+
+</div>
 
 
