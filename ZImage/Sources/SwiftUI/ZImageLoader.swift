@@ -35,7 +35,6 @@ public final class ZImageLoader: ObservableObject {
                 downloadManager: ZImageManagerProtocol) {
         self.url = url
         self.downloadManager = downloadManager
-        load()
     }
     
     public convenience init(url: URL) {
